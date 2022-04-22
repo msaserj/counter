@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+import {Tablo} from "./Tablo";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    let [count, setCount] = useState(0)
+    let increment = () => {
+        setCount(count += 1)
+    }
+
+    let reset = () => {
+        setCount(0)
+    }
+
+    return (
+        <div className="App">
+            <div className="window">
+                <Tablo count={count}/>
+                <div className="buttons">
+                    <button onClick={increment} className="button-disabled">Increment</button>
+                    <button onClick={reset} className="button">Reset</button>
+                </div>
+            </div>
+        </div>
+    );
 }
 
 export default App;
