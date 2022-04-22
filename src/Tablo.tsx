@@ -7,7 +7,7 @@ type CountPropsType = {
 export const Tablo = (props: CountPropsType) => {
     return (
         <div className="counter">
-            <h2>{props.count}</h2>
+            <h1>{props.count}</h1>
         </div>
 
     );
