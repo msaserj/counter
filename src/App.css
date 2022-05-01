@@ -15,47 +15,11 @@
   border: solid 2px ;
   border-radius: 10px;
 }
-
 .buttons {
   margin-top: 50px;
   padding: 20px;
   border: solid 2px ;
   border-radius: 10px;
-}
-
-.button {
-  background-color: #4CAF50;
-  border: none;
-  border-radius: 8px;
-  color: white;
-  padding: 16px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 2px 8px;
-  transition-duration: 0.4s;
-  cursor: pointer;
-}
-
-.button:hover {
-  background-color: #ffffff;
-  color: #4CAF50;
-}
-
-.button-disabled {
-  background-color: #4CAF50;
-  border: none;
-  border-radius: 8px;
-  color: white;
-  padding: 16px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 2px 8px;
-  transition-duration: 0.4s;
-  cursor: not-allowed;
 }
 
 .App-link {
