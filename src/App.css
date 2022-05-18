@@ -1,3 +1,11 @@
+.counter {
+  display:  inline-flex;
+}
+.input-block {
+  flex-direction: column
+}
+
+
 .App {
   text-align: center;
   background-color: #282c34;
@@ -10,7 +18,7 @@
 }
 
 .window {
-  margin-top: 50px;
+  margin: 50px;
   padding: 20px;
   border: solid 2px ;
   border-radius: 10px;

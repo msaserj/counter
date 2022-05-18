@@ -36,6 +36,7 @@ function App() {
                reset={reset}
                increment={increment}
                count={count}
+               className={buttonType}
            />
         </div>
     );
