@@ -1,43 +1,36 @@
 import React, {useState} from 'react';
 import './App.css';
-import {Tablo} from "./Tablo/Tablo"
+import {Settings} from "./Blocks/Settings"
+import {Counter} from "./Blocks/Counter";
 
 function App() {
+    const [value, setValue] = useState(0)
 
-    //incremet
-
-    let buttonType: string = "button"
-    let condition: boolean = false
-
-    const [count, setCount] = useState(0)
-    const increment = () => {
-        if (count === 5) {
-
-
-            return
-        }
-        setCount(count + 1)
+    const incHandler = () => {
+        setValue(value + 1)
+    }
+    const resetHandler = () => {
+        setValue(0)
     }
 
-    // change button action
+    const setNumHandler = () => {
 
+        localStorage.setItem('counterOne', JSON.stringify(value))
 
-    if (count === 5) {
-        buttonType = "button-disabled"
-        condition = true
     }
 
-    // reset
-    const reset = () => setCount(0)
-
+    const resetNumHandler = () => {
+    }
     return (
         <div className="App">
-           <Tablo
-               reset={reset}
-               increment={increment}
-               count={count}
-               className={buttonType}
-           />
+           <Settings
+            resetNumCallBack={resetNumHandler}
+            setNumCallBack={setNumHandler}
+            value={value}/>
+
+            <Counter
+
+             value={value} incCallBack={incHandler} resetCallBack={resetHandler} />
         </div>
     );
 }

@@ -1,15 +1,15 @@
 
 
 .button {
-    background-color: #4CAF50;
+    background-color: #007506;
     border: none;
     border-radius: 8px;
-    color: white;
+    color: #a8ff91;
     padding: 16px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 30px;
     margin: 2px 8px;
     transition-duration: 0.4s;
     cursor: pointer;

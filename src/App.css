@@ -1,30 +1,51 @@
 .counter {
-  display:  inline-flex;
+  display: flex;
+  justify-content: center;
+  margin: 50px;
 }
 .input-block {
-  flex-direction: column
+  display: flex;
+  justify-content: center;
 }
-
+.input-div {
+  justify-content: space-around;
+}
+.input {
+  max-width:110px;
+  height:40px;
+  font-size: 36px;
+  text-align: center;
+  color: #428d26;
+  margin: 12px 0;
+  background-color: #282c34;
+  border: solid 2px;
+  border-color: #006b17;
+  border-radius: 8px;
+}
+p {
+ margin: 12px;
+  font-size: 36px;
+}
 
 .App {
   text-align: center;
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   font-size: calc(10px + 2vmin);
-  color: #428d26;
+  color: #0f6700;
+  justify-content: center;
 }
 
 .window {
-  margin: 50px;
+  margin: 0;
   padding: 20px;
-  border: solid 2px ;
+  border: solid 3px ;
   border-radius: 10px;
 }
 .buttons {
-  margin-top: 50px;
+  margin-top: 20px;
   padding: 20px;
   border: solid 2px ;
   border-radius: 10px;
