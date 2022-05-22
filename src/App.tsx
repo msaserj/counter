@@ -3,34 +3,29 @@ import './App.css';
 import {Settings} from "./Blocks/Settings"
 import {Counter} from "./Blocks/Counter";
 
+
 function App() {
-    const [value, setValue] = useState(0)
+    const [localMin, setLocalMin] = useState(0)
+    const [localMax, setLocalMax] = useState(0)
 
-    const incHandler = () => {
-        setValue(value + 1)
+    const setMaxNumHandler = (max: number) => {
+        setLocalMax(max)
+
     }
-    const resetHandler = () => {
-        setValue(0)
-    }
-
-    const setNumHandler = () => {
-
-        localStorage.setItem('counterOne', JSON.stringify(value))
+    const setMinNumHandler = (min: number) => {
+        setLocalMin(min)
 
     }
 
-    const resetNumHandler = () => {
-    }
+
     return (
         <div className="App">
-           <Settings
-            resetNumCallBack={resetNumHandler}
-            setNumCallBack={setNumHandler}
-            value={value}/>
+            <Settings
+                setMaxNumHandler={setMaxNumHandler}
+                setMinNumHandler={setMinNumHandler}/>
 
             <Counter
-
-             value={value} incCallBack={incHandler} resetCallBack={resetHandler} />
+                localMax={localMax} localMin={localMin}/>
         </div>
     );
 }

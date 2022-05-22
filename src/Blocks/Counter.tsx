@@ -2,9 +2,8 @@ import React, {useEffect, useState} from 'react';
 import {Button} from "../Button/Button";
 
 type CounterType = {
-    value: number
-    incCallBack: () => void
-    resetCallBack: () => void
+    localMin: number
+    localMax: number
 }
 
 
@@ -12,20 +11,28 @@ export const Counter = (props: CounterType) => {
     const [value, setValue] = useState(0)
 
     useEffect(()=> {
-        let valueString = localStorage.getItem('min')
-        if (valueString) {
-            let newValue = JSON.parse(valueString)
-            setValue(newValue)
-        }
+        resetHandler()
+
+
+    }, [])
+
+    useEffect(()=> {
+        localStorage.setItem('counterValue', JSON.stringify(value))
     }, [value])
 
     const incHandler = () => {
-        setValue(value + 1)
+        if (props.localMin <= props.localMax) {
+            setValue(value + 1)
+        }
+
 
     }
     const resetHandler = () => {
-        localStorage.removeItem('value')
-        setValue(0)
+        let startValue = localStorage.getItem('min')
+        if (startValue) {
+            let newValue = JSON.parse(startValue)
+            setValue(Number(newValue))
+        }
     }
 
 
