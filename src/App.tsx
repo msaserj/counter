@@ -14,16 +14,13 @@ function App() {
     }
     const setMinNumHandler = (min: number) => {
         setLocalMin(min)
-
     }
-
 
     return (
         <div className="App">
             <Settings
                 setMaxNumHandler={setMaxNumHandler}
                 setMinNumHandler={setMinNumHandler}/>
-
             <Counter
                 localMax={localMax} localMin={localMin}/>
         </div>

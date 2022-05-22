@@ -28,7 +28,6 @@ export const Settings = (props: SettingsType) => {
     }, [])
 
 
-
     const onChangeHandlerMax = (event: any) => {
         let maxValue = event.target.value
         setMax(maxValue)
@@ -45,6 +44,7 @@ export const Settings = (props: SettingsType) => {
             props.setMinNumHandler(min)
             localStorage.setItem('min', JSON.stringify(min))
             localStorage.setItem('max', JSON.stringify(max))
+            localStorage.setItem('counterValue', JSON.stringify(min))
         }
     }
     const resetSettings = () => {
@@ -54,6 +54,7 @@ export const Settings = (props: SettingsType) => {
         props.setMinNumHandler(min)
         localStorage.setItem('min', JSON.stringify(0))
         localStorage.setItem('max', JSON.stringify(0))
+        localStorage.setItem('counterValue', JSON.stringify(0))
     }
 
 

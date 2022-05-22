@@ -4,6 +4,7 @@ import {Button} from "../Button/Button";
 type CounterType = {
     localMin: number
     localMax: number
+
 }
 
 
@@ -12,16 +13,16 @@ export const Counter = (props: CounterType) => {
 
     useEffect(()=> {
         resetHandler()
-
-
     }, [])
 
     useEffect(()=> {
         localStorage.setItem('counterValue', JSON.stringify(value))
+
     }, [value])
 
     const incHandler = () => {
-        if (props.localMin <= props.localMax) {
+        if (value < props.localMax) {
+
             setValue(value + 1)
         }
 
@@ -31,7 +32,8 @@ export const Counter = (props: CounterType) => {
         let startValue = localStorage.getItem('min')
         if (startValue) {
             let newValue = JSON.parse(startValue)
-            setValue(Number(newValue))
+
+            return setValue(Number(newValue))
         }
     }
 
