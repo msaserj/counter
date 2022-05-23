@@ -2,7 +2,7 @@ import React from 'react';
 import {Button} from "../Button/Button";
 
 type CounterType = {
-    localCounter: number
+    counter: number
     increment: () => void
     resetCounter: () => void
 }
@@ -11,24 +11,19 @@ type CounterType = {
 export const Counter = (props: CounterType) => {
 
 
-
-
-   // setCounter(props.localMin)
-
     const incHandler = () => {
         props.increment()
     }
 
     const resetHandler = () => {
           props.resetCounter()
-
     }
 
     return (
         <div className="counter">
             <div className="window">
                 <div className="counter window">
-                    <h1>{props.localCounter}</h1>
+                    <h1>{props.counter}</h1>
                 </div>
                 <div className="buttons">
                     <Button callBack={incHandler} name="increment"/>
