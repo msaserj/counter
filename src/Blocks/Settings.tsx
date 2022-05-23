@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {ChangeEvent} from 'react';
 import {Button} from "../Button/Button";
+import classes from "./Counter.module.css";
 
 type SettingsType = {
     setNumHandler: () => void
@@ -14,11 +15,11 @@ type SettingsType = {
 export const Settings = (props: SettingsType) => {
 
 //onChange handlers
-    const onChangeHandlerMax = (event: any) => {
-        props.changeMaxValue(event.target.value)
+    const onChangeHandlerMax = (event: ChangeEvent<HTMLInputElement>) => {
+        props.changeMaxValue(event.currentTarget.valueAsNumber)
     }
-    const onChangeHandlerMin = (event: any) => {
-        props.changeMinValue(event.target.value)
+    const onChangeHandlerMin = (event: ChangeEvent<HTMLInputElement>) => {
+        props.changeMinValue(event.currentTarget.valueAsNumber)
     }
 
 // set min max settings to local storage and counter state
@@ -32,6 +33,10 @@ export const Settings = (props: SettingsType) => {
         props.resetSettings()
     }
 
+    let disabledClass = classes.disabledclass
+    let abledClass = classes.abledclass
+
+
     return (
         <div className="counter">
             <div className="window">
@@ -39,19 +44,24 @@ export const Settings = (props: SettingsType) => {
                     <div className="input-block">
                         <p>max value</p>
                         <div className="input-div">
-                            <input onChange={onChangeHandlerMax} value={props.localMax} className="input" type="number"/>
+                            <input
+                                onChange={onChangeHandlerMax}
+                                value={props.localMax}
+                                className={props.localMax>=0 && props.localMax > props.localMin ? "input" : "input input-red"} type="number"/>
                         </div>
                     </div>
                     <div className="input-block">
                         <p>min value</p>
                         <div className="input-div">
-                            <input onChange={onChangeHandlerMin} value={props.localMin} className="input" type="number"/>
+                            <input onChange={onChangeHandlerMin}
+                                   value={props.localMin}
+                                   className={props.localMin>=0 && props.localMax > props.localMin ? "input" : "input input-red"} type="number"/>
                         </div>
                     </div>
                 </div>
                 <div className="buttons">
-                    <Button callBack={setNumbersHandler} name="set numbers"/>
-                    <Button callBack={resetSettingsHandler} name="reset to null"/>
+                    <Button callBack={setNumbersHandler} name="set numbers" disabledClass={disabledClass}/>
+                    <Button callBack={resetSettingsHandler} name="reset to null" disabledClass={disabledClass}/>
                 </div>
             </div>
         </div>

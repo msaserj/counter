@@ -30,11 +30,14 @@ function App() {
             setLocalMin(newObj.min)
             setLocalMax(newObj.max)
             setCounter(newObj.count)
-            console.log(newObj)
+            console.log(localStorage.state-counter)
+
         }
     }, [])
+
     // useEffect(() => {
-    //     localStorage.setItem('state-counter', counter.toString("count": counter))
+    //     localStorage.setItem('state-counter', JSON.stringify(
+    //         {"min": Number(localMin), "max": Number(localMax), "count": Number(counter)}))
     // }, [counter])
 
     // вызываем инкремент стэйта Counter из компоненты Counter
@@ -55,6 +58,11 @@ function App() {
         setLocalMin(0)
         setLocalMax(0)
         setCounter(0)
+    }
+
+    let alertEnteryField = "normal-color"
+    if (localMin === localMax){
+
     }
 
     return (

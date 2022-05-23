@@ -27,6 +27,11 @@
   border-color: #006b17;
   border-radius: 8px;
 }
+
+.input-red {
+  background-color: red;
+}
+
 p {
  margin: 12px;
   font-size: 36px;
