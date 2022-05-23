@@ -1,9 +1,8 @@
-import React, {useEffect, useState} from 'react';
+import React, { useState} from 'react';
 import {Button} from "../Button/Button";
 
 type SettingsType = {
-    setMaxNumHandler: (max: number) => void
-    setMinNumHandler: (min: number) => void
+    setNumHandler: (max: number, min: number) => void
     // resetNumCallBack: () => void
 
 }
@@ -17,27 +16,25 @@ export const Settings = (props: SettingsType) => {
 //onChange handlers
     const onChangeHandlerMax = (event: any) => {
         let maxValue = event.target.value
-        setMax(Math.round(maxValue))
+        setMax(maxValue)
     }
     const onChangeHandlerMin = (event: any) => {
         let minValue = event.target.value
-        setMin(Math.round(minValue))
+        setMin(minValue)
     }
 
 // set to app state from settings state
-
-
     const setNumbers = () => {
         if (max > min && max > 0 && min >= 0) {
-            props.setMaxNumHandler(max)
-            props.setMinNumHandler(min)
+            props.setNumHandler(max, min)
         }
+
     }
     const resetSettings = () => {
         setMin(0)
         setMax(0)
-        props.setMaxNumHandler(0)
-        props.setMinNumHandler(0)
+        props.setNumHandler(0, 0)
+
     }
 
     return (

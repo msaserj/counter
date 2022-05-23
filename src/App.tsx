@@ -7,27 +7,41 @@ import {Counter} from "./Blocks/Counter";
 function App() {
     const [localMin, setLocalMin] = useState(0)
     const [localMax, setLocalMax] = useState(0)
+    const [localCounter, setLocalCounter] = useState(0)
+    console.log(localMin)
+    console.log(localMax)
 
-    const setMaxNumHandler = (max: number) => {
+// Callback для закидывания значений их стэйта Settings в стэйт App
+    const setNumHandler = (max: number, min: number) => {
         setLocalMax(max)
-        console.log(localMin)
-
-    }
-    const setMinNumHandler = (min: number) => {
         setLocalMin(min)
-        console.log(localMax)
+        setLocalCounter(min)
+        localStorage.setItem('min', JSON.stringify(min))
+        localStorage.setItem('max', JSON.stringify(max))
+        localStorage.setItem('counter', JSON.stringify(min))
+    }
+
+    const increment = () => {
+        if (localCounter < localMax) {
+            setLocalCounter(Number(localCounter) + 1)
+        }
+    }
+
+    const resetCounter = () => {
+        setLocalCounter(localMin)
     }
 
     return (
         <div className="App">
             <Settings
-                setMaxNumHandler={setMaxNumHandler}
-                setMinNumHandler={setMinNumHandler}
+                setNumHandler={setNumHandler}
+
             />
             <Counter
-                // localMax={localMax}
-                // localMin={localMin}
-            />
+                localCounter={localCounter}
+                increment={increment}
+                resetCounter={resetCounter}
+             />
         </div>
     );
 }

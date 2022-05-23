@@ -1,22 +1,26 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {Button} from "../Button/Button";
 
 type CounterType = {
-   //
-
+    localCounter: number
+    increment: () => void
+    resetCounter: () => void
 }
 
 
 export const Counter = (props: CounterType) => {
-    const [value, setValue] = useState(0)
 
+
+
+
+   // setCounter(props.localMin)
 
     const incHandler = () => {
-            setValue(value + 1)
+        props.increment()
     }
 
     const resetHandler = () => {
-            return setValue(0)
+          props.resetCounter()
 
     }
 
@@ -24,7 +28,7 @@ export const Counter = (props: CounterType) => {
         <div className="counter">
             <div className="window">
                 <div className="counter window">
-                    <h1>{value}</h1>
+                    <h1>{props.localCounter}</h1>
                 </div>
                 <div className="buttons">
                     <Button callBack={incHandler} name="increment"/>
