@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button} from "../Button/Button";
+import {Button} from "../ButtonAndInput/Button";
 import classes from "./Counter.module.css";
 
 
@@ -31,8 +31,8 @@ export const Counter = (props: CounterType) => {
                     <h1>{props.counter}</h1>
                 </div>
                 <div className="buttons">
-                    <Button callBack={incHandler} name="increment" disabledClass={disabledClass}/>
-                    <Button callBack={resetHandler} name="reset" disabledClass={abledClass}/>
+                    <Button callBack={incHandler} name="increment" disabledClass={disabledClass} disable={false}/>
+                    <Button callBack={resetHandler} name="reset" disabledClass={abledClass} disable={false}/>
                 </div>
             </div>
         </div>

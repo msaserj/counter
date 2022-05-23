@@ -23,6 +23,11 @@ function App() {
             {"min": Number(localMin), "max": Number(localMax), "count": Number(localMin)}))
     }
 
+    // useEffect(() => {
+    //     localStorage.setItem('state-counter', JSON.stringify(
+    //         {"min": Number(localMin), "max": Number(localMax), "count": Number(counter)}))
+    // }, [counter])
+
     useEffect(() => {
         let counterObj = localStorage.getItem('state-counter')
         if (counterObj) {
@@ -35,10 +40,7 @@ function App() {
         }
     }, [])
 
-    // useEffect(() => {
-    //     localStorage.setItem('state-counter', JSON.stringify(
-    //         {"min": Number(localMin), "max": Number(localMax), "count": Number(counter)}))
-    // }, [counter])
+
 
     // вызываем инкремент стэйта Counter из компоненты Counter
     const increment = () => {
