@@ -6,15 +6,15 @@ import {Counter} from "./Blocks/Counter";
 
 function App() {
     // стейты с числами
-    const [localMin, setLocalMin] = useState(0)
-    const [localMax, setLocalMax] = useState(0)
-    const [counter, setCounter] = useState(0)
+    const [localMin, setLocalMin] = useState<number>(0)
+    const [localMax, setLocalMax] = useState<number>(0)
+    const [counter, setCounter] = useState<number>(0)
     // активность кнопки Set
-    const [setButtonActive, setSetButtonActive] = useState(true)
+    const [setButtonActive, setSetButtonActive] = useState<boolean>(true)
     // активность кнопки increment
-    const [incButtonActive, setIncButtonActive] = useState(false)
+    const [incButtonActive, setIncButtonActive] = useState<boolean>(false)
     // статус табла
-    const [tabloStatus, setTabloStatus] = useState('')
+    const [tabloStatus, setTabloStatus] = useState<'error' | 'set' | ''>('')
 
     // сравнение значений, установка статуса табла
     const checkHandler = () => {
@@ -95,21 +95,23 @@ function App() {
 
     return (
         <div className="App">
-            <Settings
-                setNumHandler={setNumHandler}
-                localMax={localMax} localMin={localMin}
-                changeMaxValue={changeMaxValue}
-                changeMinValue={changeMinValue}
-                resetSettings={resetSettings}
-                inputClassMax={InputClassMax}
-                inputClassMin={InputClassMin}
-                activeButtonSet={setButtonActive}/>
-            <Counter
-                counter={counter}
-                increment={increment}
-                resetCounter={resetCounter}
-                redCounter={redCounter}
-                activeButtonInc={incButtonActive} status={tabloStatus}/>
+            <div>
+                <Settings
+                    setNumHandler={setNumHandler}
+                    localMax={localMax} localMin={localMin}
+                    changeMaxValue={changeMaxValue}
+                    changeMinValue={changeMinValue}
+                    resetSettings={resetSettings}
+                    inputClassMax={InputClassMax}
+                    inputClassMin={InputClassMin}
+                    activeButtonSet={setButtonActive}/>
+                <Counter
+                    counter={counter}
+                    increment={increment}
+                    resetCounter={resetCounter}
+                    redCounter={redCounter}
+                    activeButtonInc={incButtonActive} status={tabloStatus}/>
+            </div>
         </div>
     );
 }

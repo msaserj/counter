@@ -8,8 +8,9 @@
     justify-content: center;
 }
 
+
 .counter {
-    display: flex;
+    display:inline-block;
     justify-content: center;
     margin: 50px;
     min-height: 350px;
