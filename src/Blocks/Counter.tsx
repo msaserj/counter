@@ -25,7 +25,7 @@ export const Counter = (props: CounterType) => {
     const redCounter = props.redCounter ? css.red : css.blue
     // tablo templates
     const tabloNum = <h1 className={redCounter}>{props.counter}</h1>
-    const tabloInf = <h4>Enter values<br/>and press "set numbers"</h4>
+    const tabloInf = <h4>Enter values up to 100<br/>and press "set numbers"</h4>
     const tabloErr = <h2 className={css.red}>Incorrect!</h2>
 
     return (

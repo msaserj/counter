@@ -19,10 +19,10 @@ export const Settings = (props: SettingsType) => {
 
     //onChange handlers
     const onChangeHandlerMax = (num: number) => {
-        props.changeMaxValue(num)
+        props.changeMaxValue(Math.floor(num))
     }
     const onChangeHandlerMin = (num: number) => {
-        props.changeMinValue(num)
+        props.changeMinValue(Math.floor(num))
     }
 
     // set min max settings to local storage and counter state

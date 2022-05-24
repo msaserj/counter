@@ -19,7 +19,7 @@ export const Input = (props: InputPropsType) => {
             type="number"
             value={props.value}
             onChange={onChangeInputHandler}
-            className={finalInputClassName}/>
+            className={finalInputClassName} max={100}/>
     );
 };
 
