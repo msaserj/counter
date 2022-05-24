@@ -1,10 +1,8 @@
-
-
 .button {
-    background-color: #007506;
+    background-color: #0044be;
     border: none;
     border-radius: 8px;
-    color: #a8ff91;
+    color: #ffffff;
     padding: 16px 32px;
     text-align: center;
     text-decoration: none;
@@ -17,11 +15,11 @@
 
 .button:hover {
     background-color: #ffffff;
-    color: #4CAF50;
+    color:  #005bf6;
 }
 
-.buttondisabled {
-    background-color: #4CAF50;
+.disabled {
+    background-color: #1d75ff;
     border: none;
     border-radius: 8px;
     color: white;
@@ -29,7 +27,7 @@
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 30px;
     margin: 2px 8px;
     transition-duration: 0.4s;
     cursor: not-allowed;

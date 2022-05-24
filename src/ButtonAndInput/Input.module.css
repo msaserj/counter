@@ -1,0 +1,25 @@
+.input {
+    max-width:110px;
+    height:40px;
+    font-size: 36px;
+    text-align: center;
+    color: #005bf6;
+    margin: 12px ;
+    background-color: #282c34;
+    border: solid 3px;
+    border-color: #3f8aff;
+    border-radius: 8px;
+}
+
+.inputred {
+    max-width:110px;
+    height:40px;
+    font-size: 36px;
+    text-align: center;
+    color: #0087f6;
+    margin: 12px ;
+    background-color: #880000;
+    border: solid 3px;
+    border-color: #3f8aff;
+    border-radius: 8px;
+}

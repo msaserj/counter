@@ -1,6 +1,6 @@
-.disabledclass {
-    background-color: red;
+.blue {
+    color: #005bf6;
 }
-/*.abledclass {*/
-/*    background-color: yellow;*/
-/*}*/
+.red {
+     color: #8c0000;
+ }

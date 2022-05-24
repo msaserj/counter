@@ -1,12 +1,16 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Button} from "../ButtonAndInput/Button";
-import classes from "./Counter.module.css";
+import css from "./Counter.module.css"
+
 
 
 type CounterType = {
     counter: number
     increment: () => void
     resetCounter: () => void
+    activeButtonInc: boolean
+    redCounter: boolean
+    status: string
 }
 
 
@@ -20,19 +24,23 @@ export const Counter = (props: CounterType) => {
     const resetHandler = () => {
           props.resetCounter()
     }
-    let disabledClass = classes.disabledclass
-    let abledClass = classes.abledclass
+    const redCounter = props.redCounter ? css.red : css.blue
+
+    const tabloNum = <h1 className={redCounter}>{props.counter}</h1>
+    const tabloInf = <h4>Enter values and press "set"</h4>
+    const tabloErr = <h2 className={css.red}>Incorrect!</h2>
+
+
 
     return (
         <div className="counter">
             <div className="window">
-                <div className="counter window">
-
-                    <h1>{props.counter}</h1>
+                <div className="window block">
+                    {props.status === 'error' ? tabloErr : props.status === 'set' ? tabloInf : tabloNum}
                 </div>
-                <div className="buttons">
-                    <Button callBack={incHandler} name="increment" disabledClass={disabledClass} disable={false}/>
-                    <Button callBack={resetHandler} name="reset" disabledClass={abledClass} disable={false}/>
+                <div className="buttons-block">
+                    <Button callBack={incHandler} name="increment"   activeButton={props.activeButtonInc}/>
+                    <Button callBack={resetHandler} name="reset"   activeButton={false}/>
                 </div>
             </div>
         </div>

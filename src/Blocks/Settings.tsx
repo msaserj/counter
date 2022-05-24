@@ -1,7 +1,7 @@
-import React, {ChangeEvent} from 'react';
+import React from 'react';
 import {Button} from "../ButtonAndInput/Button";
-import classes from "./Counter.module.css";
 import {Input} from "../ButtonAndInput/Input";
+import css from "./Settings.module.css"
 
 type SettingsType = {
     setNumHandler: () => void
@@ -10,7 +10,9 @@ type SettingsType = {
     localMin: number
     localMax: number
     resetSettings: () => void
-
+    inputClassMin: string
+    inputClassMax: string
+    activeButtonSet: boolean
 }
 
 export const Settings = (props: SettingsType) => {
@@ -36,43 +38,40 @@ const onChangeHandlerMin = (num: number) => {
         props.resetSettings()
     }
 
-    let disabledClass = classes.disabledclass
-    let abledClass = classes.abledclass
+
 
 
     return (
         <div className="counter">
             <div className="window">
-                <div className="window">
-                    <div className="input-block">
+                <div className="window block">
+                    <div className={css.inputblock}>
                         <p>max value</p>
-                        <div className="input-div">
-
+                        <div className={css.input}>
                             <Input
-                                // onChange={onChangeHandlerMax}
                                 value={props.localMax}
-                                // className={props.localMax>=0 && props.localMax > props.localMin ? "input" : "input input-red"}
-                                // type="number"
-                                setValue={onChangeHandlerMax}/>
+                                setValue={onChangeHandlerMax}
+                                cssClass={props.inputClassMax}
+                            />
                         </div>
                     </div>
-                    <div className="input-block">
+                    <div className={css.inputblock}>
                         <p>min value</p>
-                        <div className="input-div">
+                        <div className={css.input}>
                             <Input
-                                // onChange={onChangeHandlerMax}
                                 value={props.localMin}
-                                // className={props.localMax>=0 && props.localMax > props.localMin ? "input" : "input input-red"}
-                                // type="number"
-                                setValue={onChangeHandlerMin}/>
+                                setValue={onChangeHandlerMin}
+                                cssClass={props.inputClassMin}
+
+                            />
                         </div>
                     </div>
                 </div>
-                <div className="buttons">
-                    <Button callBack={setNumbersHandler} name="set numbers" disabledClass={disabledClass}
-                            disable={false}/>
-                    <Button callBack={resetSettingsHandler} name="reset to null" disabledClass={disabledClass}
-                            disable={false}/>
+                <div className="buttons-block">
+                    <Button callBack={setNumbersHandler} name="set numbers"
+                            activeButton={props.activeButtonSet}/>
+                    <Button callBack={resetSettingsHandler} name="reset to null"
+                            activeButton={false}/>
                 </div>
             </div>
         </div>
