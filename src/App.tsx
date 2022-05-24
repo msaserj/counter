@@ -26,7 +26,7 @@ function App() {
     }
     useEffect(() => {
         checkHandler()
-    },[localMax, localMin])
+    },[localMin, localMax])
 
     // onChange
     const changeMaxValue = (max: number) => {
