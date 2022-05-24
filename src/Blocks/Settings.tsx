@@ -21,6 +21,7 @@ export const Settings = (props: SettingsType) => {
     const onChangeHandlerMax = (num: number) => {
         props.changeMaxValue(Math.floor(num))
     }
+
     const onChangeHandlerMin = (num: number) => {
         props.changeMinValue(Math.floor(num))
     }

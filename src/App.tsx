@@ -36,7 +36,7 @@ function App() {
     const changeMinValue = (min: number) => {
         setLocalMin(min)
         setSetButtonActive(false)
-        setTabloStatus('set')
+
     }
 
     // Callback для закидывания значений из local стейтов в стэйт counter и localStorage
@@ -51,9 +51,9 @@ function App() {
 
     // не работает!! Хотел закидывать в localstate значение counter
     //  useEffect(() => {
-    //      // localStorage.setItem('state-counter', JSON.stringify(
-    //      //     {"min": Number(localMin), "max": Number(localMax), "count": Number(counter)}))
-    //  }, )
+    //      localStorage.setItem('state-counter', JSON.stringify(
+    //          {"min": Number(localMin), "max": Number(localMax), "count": Number(counter)}))
+    //  }, [counter])
 
     // подгружаем из localState значения
     useEffect(() => {
