@@ -5,6 +5,7 @@ import {Counter} from "./Blocks/Counter";
 
 
 function App() {
+    // стейты с числами
     const [localMin, setLocalMin] = useState(0)
     const [localMax, setLocalMax] = useState(0)
     const [counter, setCounter] = useState(0)
@@ -13,18 +14,29 @@ function App() {
     // активность кнопки increment
     const [incButtonActive, setIncButtonActive] = useState(false)
     // статус табла
-    const [tabloStatus, setTabloStatus] = useState('set')
+    const [tabloStatus, setTabloStatus] = useState('')
+
+    // сравнение значений, установка статуса табла
+    const checkHandler = () => {
+        if (localMin >= localMax || localMax < 0 || localMin < 0) {
+            setTabloStatus('error')
+        } else {
+            setTabloStatus('set')
+        }
+    }
+    useEffect(() => {
+        checkHandler()
+    },[localMax, localMin])
 
     // onChange
     const changeMaxValue = (max: number) => {
         setLocalMax(max)
         setSetButtonActive(false)
-
-        console.log(max === counter)
     }
     const changeMinValue = (min: number) => {
         setLocalMin(min)
         setSetButtonActive(false)
+        setTabloStatus('set')
     }
 
     // Callback для закидывания значений из local стейтов в стэйт counter и localStorage
@@ -32,17 +44,18 @@ function App() {
         setCounter(localMin)
         setSetButtonActive(true)
         setIncButtonActive(false)
+        setTabloStatus('')
         localStorage.setItem('state-counter', JSON.stringify(
             {"min": Number(localMin), "max": Number(localMax), "count": Number(localMin)}))
     }
 
+    // не работает!! Хотел закидывать в localstate значение counter
+    //  useEffect(() => {
+    //      // localStorage.setItem('state-counter', JSON.stringify(
+    //      //     {"min": Number(localMin), "max": Number(localMax), "count": Number(counter)}))
+    //  }, )
 
-   // не работает!!
-   //  useEffect(() => {
-   //      // localStorage.setItem('state-counter', JSON.stringify(
-   //      //     {"min": Number(localMin), "max": Number(localMax), "count": Number(counter)}))
-   //  }, )
-
+    // подгружаем из localState значения
     useEffect(() => {
         let counterObj = localStorage.getItem('state-counter')
         if (counterObj) {
@@ -53,18 +66,18 @@ function App() {
         }
     }, [])
 
-    // вызываем инкремент стэйта Counter из компоненты Counter
+    // вызываем инкремент стейта Counter из компоненты Counter, статус табло и деактивация кнопки
     const increment = () => {
         if (counter < localMax) {
             setCounter(Number(counter) + 1)
+            setTabloStatus('')
         } else if (counter === localMax) {
             setIncButtonActive(true)
         }
     }
-
     // сброс значения counter в минимальное, вызываем из компоненты Counter
     const resetCounter = () => {
-       setCounter(localMin)
+        setCounter(localMin)
         setIncButtonActive(false)
     }
     // полный сброс

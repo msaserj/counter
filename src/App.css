@@ -1,36 +1,38 @@
 .App {
-  text-align: center;
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  font-size: calc(10px + 2vmin);
+    text-align: center;
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    font-size: calc(10px + 2vmin);
+    justify-content: center;
+}
 
-  justify-content: center;
-}
 .counter {
-  display: flex;
-  justify-content: center;
-  margin: 50px;
-  min-height: 350px;
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+    min-height: 350px;
 }
+
 .block {
-  height: 150px;
+    height: 150px;
 
 }
 
 .window {
-  margin: 0;
-  padding: 20px;
-  border: solid 4px ;
-  border-radius: 10px;
-  color: #00617e;
+    margin: 0;
+    padding: 20px;
+    border: solid 4px;
+    border-radius: 10px;
+    color: #00617e;
 }
+
 .buttons-block {
-  margin-top: 20px;
-  padding: 20px;
-  border: solid 4px ;
-  border-radius: 10px;
+    margin-top: 20px;
+    padding: 20px;
+    border: solid 4px;
+    border-radius: 10px;
 }
 
 

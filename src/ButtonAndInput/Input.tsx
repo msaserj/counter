@@ -2,7 +2,7 @@ import React, {ChangeEvent} from 'react';
 import css from "./Input.module.css"
 
 type InputPropsType = {
-    setValue:(num: number) => void
+    setValue: (num: number) => void
     value: number
     cssClass: string
 }
@@ -15,12 +15,11 @@ export const Input = (props: InputPropsType) => {
         props.setValue(event.currentTarget.valueAsNumber)
     }
     return (
-            <input
-                type="number"
-                value={props.value}
-                onChange={onChangeInputHandler}
-                className={finalInputClassName}
-            />
+        <input
+            type="number"
+            value={props.value}
+            onChange={onChangeInputHandler}
+            className={finalInputClassName}/>
     );
 };
 

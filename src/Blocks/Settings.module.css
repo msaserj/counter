@@ -1,12 +1,14 @@
 .input {
     margin-right: 0;
 }
+
 .inputblock {
     display: flex;
     justify-content: flex-end;
     width: 350px;
     margin: auto;
 }
+
 p {
     margin: 12px;
     font-size: 36px;
