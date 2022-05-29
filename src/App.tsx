@@ -7,7 +7,7 @@ import {Counter} from "./Blocks/Counter";
 function App() {
     // стейты с числами
     const [localMin, setLocalMin] = useState<number>(0)
-    const [localMax, setLocalMax] = useState<number>(0)
+    const [localMax, setLocalMax] = useState<number>(5)
     const [counter, setCounter] = useState<number>(0)
     // активность кнопки Set
     const [setButtonActive, setSetButtonActive] = useState<boolean>(true)
