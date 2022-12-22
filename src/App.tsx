@@ -26,7 +26,7 @@ function App() {
     }
     useEffect(() => {
         checkHandler()
-    },[localMin, localMax])
+    }, [localMin, localMax])
 
     // onChange
     const changeMaxValue = (max: number) => {
@@ -48,12 +48,6 @@ function App() {
         localStorage.setItem('state-counter', JSON.stringify(
             {"min": Number(localMin), "max": Number(localMax), "count": Number(localMin)}))
     }
-
-    // не работает!! Хотел закидывать в localstate значение counter
-    //  useEffect(() => {
-    //      localStorage.setItem('state-counter', JSON.stringify(
-    //          {"min": Number(localMin), "max": Number(localMax), "count": Number(counter)}))
-    //  }, [counter])
 
     // подгружаем из localState значения
     useEffect(() => {
