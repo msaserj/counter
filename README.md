@@ -24,13 +24,13 @@
 </p>
 
 
-<h2 align="center"><a  href="https://msaserj.github.io/inc-socialnetwork">Live Demo</a></h2>
+<h2 align="center"><a  href="https://msaserj.github.io/it-inc-counter">Live Demo</a></h2>
 
 ## Description
 
 **This is a tutorial project - counter.**
 
-<p align="center"><img src="" width="80%"></p>
+<p align="center"><img src="./src/assets/photo.png" width="80%"></p>
 
 ## About the project.
 
