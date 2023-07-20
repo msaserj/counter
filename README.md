@@ -11,13 +11,13 @@
 
 <img src="https://img.shields.io/badge/made%20by-msaserj-red.svg" >
 
-<img src="https://img.shields.io/github/stars/msaserj/inc-socialnetwork.svg?style=flat">
+<img src="https://img.shields.io/github/stars/msaserj/counter.svg?style=flat">
 
 <img src="https://img.shields.io/badge/React-18.0.0-green.svg">
 
-<img src="https://img.shields.io/github/languages/count/msaserj/inc-socialnetwork">
+<img src="https://img.shields.io/github/languages/count/msaserj/counter">
 
-<img src="https://img.shields.io/github/languages/top/msaserj/inc-socialnetwork.svg">
+<img src="https://img.shields.io/github/languages/top/msaserj/counter.svg">
 
 <img src="https://badges.frapsoft.com/os/v1/open-source.svg?v=103" >
 
